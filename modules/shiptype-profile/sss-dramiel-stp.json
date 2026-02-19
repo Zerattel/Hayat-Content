@@ -1,0 +1,56 @@
+{
+  "main": {
+    "name": "Проф. Особенность типа «Драмиэль»",
+    "type": "Проф. Особенность типа",
+    "category": "Проф. Особенность Фрегата",
+
+    "size": 0,
+    "position": "internal",
+    "tags": ["stp"]
+  },
+  "activation": "passive",
+  "interference": 0,
+
+  "modificators": {
+    "offline": [],
+    "online": [
+      {
+        "target": "this",
+        "characteristic": "constant.modulemodifier.offence.ballistic.damage_modifier",
+        "modificationType": "number",
+        "modificator": 2.5,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.modulemodifier.engineering.hardener.active.barrier.heating_modifier",
+        "modificationType": "percent",
+        "modificator": 0,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.modulemodifier.engineering.hardener.active.armor.heating_modifier",
+        "modificationType": "percent",
+        "modificator": 0,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.modulemodifier.engineering.hardener.active.barrier.capacitor_consumption_modifier",
+        "modificationType": "number",
+        "modificator": 2,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.modulemodifier.engineering.hardener.active.armor.capacitor_consumption_modifier",
+        "modificationType": "number",
+        "modificator": 2,
+        "isAffectedByInterference": false
+      }
+    ],
+    "active": [],
+    "overload": []
+  }
+}
