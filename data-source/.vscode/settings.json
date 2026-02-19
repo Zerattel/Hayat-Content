@@ -1,0 +1,26 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+          "/modules/**/*.json",
+          "!/modules/modules.json"
+      ],
+      "url": "https://makar-ts.github.io/HayatBattleshipCalculator/schemas/modules.schema.json"
+    },
+    {
+      "fileMatch": [
+        "battleships/**/*.json",
+        "!/battleships/battleships.json"
+      ],
+      "url": "https://makar-ts.github.io/HayatBattleshipCalculator/schemas/battleship.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/modules/modules.json",
+        "/battleships/battleships.json"
+      ],
+      "url": "https://makar-ts.github.io/HayatBattleshipCalculator/schemas/registration.schema.json"
+    }
+  ],
+  "liveServer.settings.port": 5501
+}
