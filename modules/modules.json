@@ -1,4 +1,6 @@
 {
     "Драмиэль ПО": "shiptype-profile/sss-dramiel-stp.json",
-    "ПУ Ракет «Нора»": "weapons/mls.json"
+    "ПУ Ракет «Нора»": "weapons/mls.json",
+    "ПУ Ракет «Гнездо»": "weapons/mls.json",
+    "ПУ Ракет «Улей»": "weapons/mls.json"
 }
