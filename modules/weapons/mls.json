@@ -22,7 +22,7 @@
         "vector": [0, 50],
 
         "headingOffset": 0,
-        "distanceOffset": 0,
+        "distanceOffset": 15,
         "subgridRotation": 0,
 
         "fire": {
