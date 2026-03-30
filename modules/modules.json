@@ -2,5 +2,11 @@
     "Драмиэль ПО": "shiptype-profile/sss-dramiel-stp.json",
     "ПУ Ракет «Нора»": "weapons/mls.json",
     "ПУ Ракет «Гнездо»": "weapons/mls.json",
-    "ПУ Ракет «Улей»": "weapons/mls.json"
+    "ПУ Ракет «Улей»": "weapons/mls.json",
+    "ИК Лазер «Фонарь» S": "weapons/flashlight.json",
+    "ИК Лазер «Светило» M": "weapons/sun.json",
+    "ИК Лазер «Маяк» L": "weapons/beacon.json",
+    "УФ Лазер «Корректор» S": "weapons/corrector.json",
+    "УФ Лазер «Тор» M": "weapons/thor.json",
+    "УФ Лазер «Один» L": "weapons/odin.json"
 }

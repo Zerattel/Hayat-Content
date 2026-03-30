@@ -1,0 +1,62 @@
+{
+  "main": {
+    "name": "ИК Лазер «Светило»",
+    "type": "Орудия",
+    "category": "Лазеры",
+
+    "size": 3,
+    "position": "external",
+    "tags": ["gun", "offencive", "laser"]
+  },
+  "activation": "active",
+  "cycle": 1,
+  "reload": 0,
+
+  "interference": 0,
+
+  "additionalInfo": {
+    "baseDamage": 66,
+    "targetHeating": 0.06,
+    "effectiveRange": 52000,
+    "maxRange": 78000,
+    "tracking": 7
+  },
+
+  "initFunctions": "<[LaserAttack]>",
+
+  "modificators": {
+    "offline": [],
+    "online": [],
+    "active": [
+      {
+        "target": "this",
+        "characteristic": "constant.heating",
+        "modificationType": "number",
+        "modificator": 0.06,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.capacitor.generation",
+        "modificationType": "number",
+        "modificator": -76,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "dynamic.recived_damage.thermal",
+        "modificationType": "number",
+        "modificator": "module.functionsSharedData.perStep.damage",
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "dynamic.temperature",
+        "modificationType": "number",
+        "modificator": "module.functionsSharedData.perStep.heating",
+        "isAffectedByInterference": false
+      }
+    ],
+    "overload": []
+  }
+}

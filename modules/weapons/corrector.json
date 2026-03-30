@@ -1,0 +1,62 @@
+{
+  "main": {
+    "name": "УФ Лазер «Корректор»",
+    "type": "Орудия",
+    "category": "Лазеры",
+
+    "size": 1,
+    "position": "external",
+    "tags": ["gun", "offencive", "laser"]
+  },
+  "activation": "active",
+  "cycle": 1,
+  "reload": 0,
+
+  "interference": 0,
+
+  "additionalInfo": {
+    "baseDamage": 42,
+    "targetHeating": 0.03,
+    "effectiveRange": 8000,
+    "maxRange": 12000,
+    "tracking": 45
+  },
+
+  "initFunctions": "<[LaserAttack]>",
+
+  "modificators": {
+    "offline": [],
+    "online": [],
+    "active": [
+      {
+        "target": "this",
+        "characteristic": "constant.heating",
+        "modificationType": "number",
+        "modificator": 0.09,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.capacitor.generation",
+        "modificationType": "number",
+        "modificator": -7,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "dynamic.recived_damage.electro_magnetic",
+        "modificationType": "number",
+        "modificator": "module.functionsSharedData.perStep.damage",
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "dynamic.temperature",
+        "modificationType": "number",
+        "modificator": "module.functionsSharedData.perStep.heating",
+        "isAffectedByInterference": false
+      }
+    ],
+    "overload": []
+  }
+}
