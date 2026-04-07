@@ -130,7 +130,7 @@
   "internalModules": [
     {
       "class": "BaseModule",
-      "state": "offline",
+      "state": "active",
       "uuid": "0c9947a6-f22d-4413-be31-8af8e47d8d05-1775601637166",
       "characteristics": {
         "main": {
@@ -152,7 +152,7 @@
               "target": "target",
               "characteristic": "dynamic.hp.barrier",
               "modificationType": "number",
-              "modificator": "module.characteristics.additionalInfo.baseRecharge * parent.currentCharacteristics.constant.module_modifiers['support>shield_injection_modifier']",
+              "modificator": "50 * parent.currentCharacteristics.constant.module_modifiers['support>shield_injection_modifier']",
               "isAffectedByInterference": false
             }
           ],
