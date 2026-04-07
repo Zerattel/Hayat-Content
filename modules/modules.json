@@ -8,5 +8,6 @@
     "ИК Лазер «Маяк» L": "weapons/beacon.json",
     "УФ Лазер «Корректор» S": "weapons/corrector.json",
     "УФ Лазер «Тор» M": "weapons/thor.json",
-    "УФ Лазер «Один» L": "weapons/odin.json"
+    "УФ Лазер «Один» L": "weapons/odin.json",
+    "Ангар Дрона «Кадуцей»": "drones/caduceus-hangar.json"
 }
