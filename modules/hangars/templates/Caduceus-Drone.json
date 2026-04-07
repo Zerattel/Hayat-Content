@@ -56,7 +56,7 @@
       "jumpdistance": 0,
       "maneuverability": 4,
       "sensors_power": 0,
-      "capture_range": 0,
+      "capture_range": 5000,
       "capacitor": {
         "charge": 10,
         "generation": 2
