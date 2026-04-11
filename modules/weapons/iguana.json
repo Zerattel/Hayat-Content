@@ -1,28 +1,29 @@
 {
   "main": {
-    "name": "ИК Лазер «Маяк»",
+    "name": "Артиллерия «Игуана» M",
     "type": "Орудия",
-    "category": "Лазеры",
+    "category": "Баллистика",
 
-    "size": 3,
+    "size": 2,
     "position": "external",
-    "tags": ["gun", "offencive", "laser"]
+    "tags": ["gun", "offencive", "ballistic"]
   },
   "activation": "active",
   "cycle": 1,
-  "reload": 0,
+  "reload": 3,
 
   "interference": 0,
 
   "additionalInfo": {
-    "baseDamage": 66,
-    "targetHeating": 0.06,
-    "effectiveRange": 52000,
-    "maxRange": 78000,
-    "tracking": 7
+    "baseDamage": 151,
+    "targetHeating": 0,
+    "effectiveRange": 50000,
+    "penaltyStep": 5000,
+    "penalty": 1,
+    "tracking": 4
   },
 
-  "initFunctions": "<[LaserAttack]>",
+  "initFunctions": "<[BallisticAttack]>",
 
   "modificators": {
     "offline": [],
@@ -32,28 +33,21 @@
         "target": "this",
         "characteristic": "constant.heating",
         "modificationType": "number",
-        "modificator": 0.06,
+        "modificator": 0.08,
         "isAffectedByInterference": false
       },
       {
         "target": "this",
         "characteristic": "constant.capacitor.generation",
         "modificationType": "number",
-        "modificator": -72,
+        "modificator": -3,
         "isAffectedByInterference": false
       },
       {
         "target": "target",
-        "characteristic": "dynamic.recived_damage.thermal",
+        "characteristic": "dynamic.recived_damage.kinetic",
         "modificationType": "number",
         "modificator": "module.functionsSharedData.perStep.damage",
-        "isAffectedByInterference": false
-      },
-      {
-        "target": "target",
-        "characteristic": "dynamic.temperature",
-        "modificationType": "number",
-        "modificator": "module.functionsSharedData.perStep.heating",
         "isAffectedByInterference": false
       }
     ],

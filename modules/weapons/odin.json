@@ -39,7 +39,7 @@
         "target": "this",
         "characteristic": "constant.capacitor.generation",
         "modificationType": "number",
-        "modificator": -102,
+        "modificator": -100,
         "isAffectedByInterference": false
       },
       {

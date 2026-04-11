@@ -1,0 +1,44 @@
+{
+  "main": {
+    "name": "Система целеуказания",
+    "type": "РЭБ",
+    "category": "Системы целеуказания",
+
+    "size": 2,
+    "position": "internal",
+    "tags": ["targetpainer", "ew"]
+  },
+  "activation": "active",
+  "cycle": 1,
+  "reload": 0,
+  "interference": 0,
+
+  "modificators": {
+    "offline": [],
+    "online": [],
+    "active": [
+      {
+        "target": "this",
+        "characteristic": "constant.heating",
+        "modificationType": "number",
+        "modificator": 0.01,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.capacitor.generation",
+        "modificationType": "number",
+        "modificator": -6,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "constant.body.signature",
+        "modificationType": "percent",
+        "modificator": 1.7,
+        "isAffectedByInterference": false
+      }
+    ],
+    "overload": []
+  }
+}

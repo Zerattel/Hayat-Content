@@ -1,12 +1,12 @@
 {
   "main": {
-    "name": "ИК Лазер «Маяк»",
+    "name": "Пулемёт гатлинга «Квинт» L",
     "type": "Орудия",
-    "category": "Лазеры",
+    "category": "Баллистика",
 
     "size": 3,
     "position": "external",
-    "tags": ["gun", "offencive", "laser"]
+    "tags": ["gun", "offencive", "ballistic"]
   },
   "activation": "active",
   "cycle": 1,
@@ -15,14 +15,15 @@
   "interference": 0,
 
   "additionalInfo": {
-    "baseDamage": 66,
-    "targetHeating": 0.06,
-    "effectiveRange": 52000,
-    "maxRange": 78000,
-    "tracking": 7
+    "baseDamage": 60,
+    "targetHeating": 0,
+    "effectiveRange": 9000,
+    "penaltyStep": 3000,
+    "penalty": 1,
+    "tracking": 10
   },
 
-  "initFunctions": "<[LaserAttack]>",
+  "initFunctions": "<[BallisticAttack]>",
 
   "modificators": {
     "offline": [],
@@ -32,28 +33,21 @@
         "target": "this",
         "characteristic": "constant.heating",
         "modificationType": "number",
-        "modificator": 0.06,
+        "modificator": 0.02,
         "isAffectedByInterference": false
       },
       {
         "target": "this",
         "characteristic": "constant.capacitor.generation",
         "modificationType": "number",
-        "modificator": -72,
+        "modificator": -3,
         "isAffectedByInterference": false
       },
       {
         "target": "target",
-        "characteristic": "dynamic.recived_damage.thermal",
+        "characteristic": "dynamic.recived_damage.kinetic",
         "modificationType": "number",
         "modificator": "module.functionsSharedData.perStep.damage",
-        "isAffectedByInterference": false
-      },
-      {
-        "target": "target",
-        "characteristic": "dynamic.temperature",
-        "modificationType": "number",
-        "modificator": "module.functionsSharedData.perStep.heating",
         "isAffectedByInterference": false
       }
     ],
