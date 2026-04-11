@@ -21,14 +21,14 @@
         "target": "this",
         "characteristic": "constant.capacitor.generation",
         "modificationType": "number",
-        "modificator": 5,
+        "modificator": "5 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>EW_strenght_modifier']",
         "isAffectedByInterference": false
       },
       {
         "target": "target",
         "characteristic": "constant.capacitor.generation",
         "modificationType": "number",
-        "modificator": -5,
+        "modificator": "-5 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>EW_strenght_modifier']",
         "isAffectedByInterference": false
       }
     ],
