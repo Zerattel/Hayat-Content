@@ -2,5 +2,7 @@
     "missile-s": "subships/missile-s.json",
     "missile-m": "subships/missile-m.json",
     "missile-l": "subships/missile-l.json",
+    "gc-varnava": "destroers/gc-varnava.json",
+    "kr-gorbun": "cruisers/kr-gorbun.json",
     "caduseus": "subships/caduceus.json"
 }

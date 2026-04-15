@@ -1,0 +1,426 @@
+{
+  "class": "ShipObject",
+  "x": 6431.372549019608,
+  "y": 2086.2745098039213,
+  "visible": true,
+  "id": "KK Pioner 3",
+  "parent": null,
+  "children": {
+    "contactController": {
+      "class": "ContactController",
+      "x": 0,
+      "y": 0,
+      "visible": true,
+      "id": "contactController",
+      "parent": "inherted",
+      "children": {},
+      "step": 6,
+      "livetime": 18,
+      "tasks": [],
+      "capturedTargets": [],
+      "currentTarget": null
+    },
+    "shipStatsHud": {
+      "class": "ShipStatsHUD",
+      "x": 0,
+      "y": 0,
+      "visible": false,
+      "id": "shipStatsHud",
+      "parent": "inherted",
+      "children": {},
+      "distance": -300,
+      "bar": {
+        "height": 250,
+        "width": 40,
+        "padding": 7,
+        "border": 7,
+        "gap": 30
+      }
+    },
+    "vectorHud": {
+      "class": "VectorHud",
+      "x": 0,
+      "y": 0,
+      "visible": true,
+      "id": "vectorHud",
+      "parent": "inherted",
+      "children": {},
+      "settings": {
+        "directionLength": 500,
+        "nextStepPointSize": 20,
+        "showRDirection": true,
+        "showVDirection": true,
+        "showNextSteps": false
+      }
+    },
+    "signatureHud": {
+      "class": "SignatureShower",
+      "x": 0,
+      "y": 0,
+      "visible": true,
+      "id": "signatureHud",
+      "parent": "inherted",
+      "children": {},
+      "lineWidth": 20
+    },
+    "hud": {
+      "class": "BasicDataHud",
+      "x": 0,
+      "y": 0,
+      "visible": false,
+      "id": "hud",
+      "parent": "inherted",
+      "children": {},
+      "data": [
+        {
+          "func": {
+            "args": "hud",
+            "body": "return `${hud.parent.id}`"
+          }
+        },
+        {
+          "func": {
+            "args": "hud",
+            "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+          }
+        },
+        {
+          "func": {
+            "args": "hud",
+            "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+          }
+        },
+        {
+          "func": {
+            "args": "hud",
+            "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+          }
+        },
+        {
+          "func": {
+            "args": "hud",
+            "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+          }
+        },
+        {
+          "func": {
+            "args": "hud",
+            "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+          }
+        }
+      ],
+      "length": 400,
+      "padding": 150,
+      "direction": 60
+    },
+    "image": {
+      "class": "SpriteShower",
+      "x": 0,
+      "y": 0,
+      "visible": true,
+      "id": "image",
+      "parent": "inherted",
+      "children": {},
+      "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/Fregate.svg",
+      "size": 30,
+      "color": "#ff0000"
+    }
+  },
+  "step": 6,
+  "livetime": 18,
+  "tasks": [],
+  "collision": true,
+  "velocity": [
+    -14.942920471376183,
+    -1.3073361412148736
+  ],
+  "direction": -95,
+  "forces": [],
+  "baseCharacteristics": {
+    "dynamic": {
+      "recived_damage": {
+        "kinetic": 0,
+        "high_explosive": 0,
+        "electro_magnetic": 0,
+        "thermal": 0
+      },
+      "hp": {
+        "hull": 300,
+        "armor": 800,
+        "barrier": 0
+      },
+      "temperature": 0,
+      "charge": 250,
+      "fuel": 0
+    },
+    "constant": {
+      "body": {
+        "tonnage": 2,
+        "core": 2,
+        "mass": 1067000,
+        "layers": [
+          "battleship"
+        ],
+        "containers": {
+          "storage": 0,
+          "hangar": 0
+        },
+        "signature": 30,
+        "subgrid": {
+          "size": 0,
+          "category": "battle",
+          "fuel": -1
+        }
+      },
+      "acceleration": 150,
+      "jumpdistance": 0,
+      "maneuverability": 3,
+      "sensors_power": 0,
+      "capture_range": 25000,
+      "capacitor": {
+        "charge": 250,
+        "generation": 30
+      },
+      "slots": {
+        "external": 3,
+        "internal": 3
+      },
+      "hp": {
+        "hull": 300,
+        "armor": 800,
+        "barrier": 0
+      },
+      "collision_energy_distribution": {
+        "damage": 0.69,
+        "velocity": 0.3,
+        "heat": 0.01
+      },
+      "temperature": 1,
+      "heating": 0,
+      "resistance": {
+        "kinetic": {
+          "hull": 0,
+          "armor": 0,
+          "barrier": 0
+        },
+        "high_explosive": {
+          "hull": 0,
+          "armor": 0,
+          "barrier": 0
+        },
+        "electro_magnetic": {
+          "hull": 0,
+          "armor": 0,
+          "barrier": 0
+        },
+        "thermal": {
+          "hull": 0,
+          "armor": 0,
+          "barrier": 0
+        },
+        "EW": 0
+      },
+      "barrier": {
+        "passive_regeneration": 0.01,
+        "resonance": {
+          "frequency": 0.3,
+          "tendency": 0.01,
+          "range": 0.4
+        }
+      }
+    }
+  },
+  "dynamicCharacteristics": {
+    "recived_damage": {
+      "kinetic": 0,
+      "high_explosive": 0,
+      "electro_magnetic": 0,
+      "thermal": 0
+    },
+    "hp": {
+      "hull": 300,
+      "armor": 800,
+      "barrier": null
+    },
+    "temperature": 0,
+    "charge": 250,
+    "fuel": 0
+  },
+  "externalModules": [
+    {
+      "class": "BaseModule",
+      "state": "offline",
+      "uuid": "202790f9-5bfd-4f55-9880-799fddce1639-1776185787916",
+      "characteristics": {
+        "main": {
+          "name": "Пулемёт гатлинга «Аккорд» M",
+          "type": "Орудия",
+          "category": "Баллистика",
+          "size": 2,
+          "position": "external",
+          "tags": [
+            "gun",
+            "offencive",
+            "ballistic"
+          ]
+        },
+        "activation": "active",
+        "modificators": {
+          "offline": [],
+          "online": [],
+          "active": [
+            {
+              "target": "this",
+              "characteristic": "constant.heating",
+              "modificationType": "number",
+              "modificator": 0.02,
+              "isAffectedByInterference": false
+            },
+            {
+              "target": "this",
+              "characteristic": "constant.capacitor.generation",
+              "modificationType": "number",
+              "modificator": -3,
+              "isAffectedByInterference": false
+            },
+            {
+              "target": "target",
+              "characteristic": "dynamic.recived_damage.kinetic",
+              "modificationType": "number",
+              "modificator": "module.functionsSharedData.perStep.damage",
+              "isAffectedByInterference": false
+            }
+          ],
+          "overload": []
+        },
+        "cycle": 1,
+        "reload": 0,
+        "interference": 0,
+        "additionalInfo": {
+          "baseDamage": 45,
+          "targetHeating": 0,
+          "effectiveRange": 5000,
+          "penaltyStep": 2000,
+          "penalty": 1,
+          "tracking": 20
+        },
+        "initFunctions": "<[BallisticAttack]>"
+      },
+      "previousState": "offline",
+      "inOnlineSteps": 0,
+      "inStageSteps": 3,
+      "functionsSharedData": {
+        "perStep": {},
+        "perState": {},
+        "uncleared": {}
+      }
+    }
+  ],
+  "internalModules": [
+    {
+      "class": "BaseModule",
+      "state": "active",
+      "uuid": "e337fb40-c219-4029-8cb2-48bb14d62cd2-1776185742368",
+      "characteristics": {
+        "main": {
+          "name": "Внешний радиатор S",
+          "type": "Термодинамика",
+          "category": "Радиатор",
+          "size": 1,
+          "position": "internal",
+          "tags": [
+            "externalradiator",
+            "cooler"
+          ]
+        },
+        "activation": "active",
+        "modificators": {
+          "offline": [],
+          "online": [],
+          "active": [
+            {
+              "target": "this",
+              "characteristic": "constant.capacitor.generation",
+              "modificationType": "number",
+              "modificator": "-4 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>consumption_modifier']",
+              "isAffectedByInterference": false
+            },
+            {
+              "target": "this",
+              "characteristic": "constant.body.signature",
+              "modificationType": "percent",
+              "modificator": "1.08 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>radiation_modifier']",
+              "isAffectedByInterference": false
+            },
+            {
+              "target": "this",
+              "characteristic": "constant.heating",
+              "modificationType": "number",
+              "modificator": "-0.04 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>signature_penalty_modifier']",
+              "isAffectedByInterference": true
+            }
+          ],
+          "overload": []
+        },
+        "cycle": 1,
+        "reload": 0,
+        "interference": 0
+      },
+      "previousState": "active",
+      "inOnlineSteps": 3,
+      "inStageSteps": 2,
+      "functionsSharedData": {
+        "perStep": {},
+        "perState": {},
+        "uncleared": {}
+      }
+    },
+    {
+      "class": "BaseModule",
+      "state": "online",
+      "uuid": "24458fd6-1d49-425f-8145-0be57e31b3c6-1776185774028",
+      "characteristics": {
+        "main": {
+          "name": "Проф. Особенность типа «Пионер»",
+          "type": "Проф. Особенность типа",
+          "category": "Проф. Особенность Фрегата",
+          "size": 0,
+          "position": "internal",
+          "tags": [
+            "stp"
+          ]
+        },
+        "activation": "passive",
+        "modificators": {
+          "offline": [],
+          "online": [
+            {
+              "target": "this",
+              "characteristic": "constant.module_modifiers.offence>ballistic>damage_modifier",
+              "modificationType": "number",
+              "modificator": 0.2,
+              "isAffectedByInterference": false
+            }
+          ],
+          "active": [],
+          "overload": []
+        },
+        "interference": 0
+      },
+      "previousState": "online",
+      "inOnlineSteps": 3,
+      "inStageSteps": 2,
+      "functionsSharedData": {
+        "perStep": {},
+        "perState": {},
+        "uncleared": {}
+      }
+    }
+  ],
+  "otherModules": [],
+  "dices": {
+    "contactQuality": 10,
+    "maneuvering": 0
+  },
+  "__version": "1.11.0"
+}

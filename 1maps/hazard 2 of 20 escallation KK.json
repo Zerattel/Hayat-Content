@@ -1,0 +1,3255 @@
+{
+  "version": "1.11.0",
+  "map": {
+    "size": 10000,
+    "grid": 500,
+    "offset": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "logs": [],
+  "objects": {
+    "KK Pioner 1": {
+      "class": "ShipObject",
+      "x": 3788.2352941176473,
+      "y": 1250.9803921568625,
+      "visible": true,
+      "id": "KK Pioner 1",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 18,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": false
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/Fregate.svg",
+          "size": 30,
+          "color": "#ff0000"
+        }
+      },
+      "step": 6,
+      "livetime": 18,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        -19.69615506024416,
+        3.4729635533386083
+      ],
+      "direction": -70,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 300,
+            "armor": 800,
+            "barrier": 0
+          },
+          "temperature": 0,
+          "charge": 250,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 2,
+            "core": 2,
+            "mass": 1067000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 30,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 150,
+          "jumpdistance": 0,
+          "maneuverability": 3,
+          "sensors_power": 0,
+          "capture_range": 25000,
+          "capacitor": {
+            "charge": 250,
+            "generation": 30
+          },
+          "slots": {
+            "external": 3,
+            "internal": 3
+          },
+          "hp": {
+            "hull": 300,
+            "armor": 800,
+            "barrier": 0
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 300,
+          "armor": 800,
+          "barrier": null
+        },
+        "temperature": 0,
+        "charge": 250,
+        "fuel": 0
+      },
+      "externalModules": [
+        {
+          "class": "BaseModule",
+          "state": "offline",
+          "uuid": "286a924a-fa80-4568-9369-704fbe96cdb2-1776185790711",
+          "characteristics": {
+            "main": {
+              "name": "Пулемёт гатлинга «Аккорд» M",
+              "type": "Орудия",
+              "category": "Баллистика",
+              "size": 2,
+              "position": "external",
+              "tags": [
+                "gun",
+                "offencive",
+                "ballistic"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": 0.02,
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": -3,
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "target",
+                  "characteristic": "dynamic.recived_damage.kinetic",
+                  "modificationType": "number",
+                  "modificator": "module.functionsSharedData.perStep.damage",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0,
+            "additionalInfo": {
+              "baseDamage": 45,
+              "targetHeating": 0,
+              "effectiveRange": 5000,
+              "penaltyStep": 2000,
+              "penalty": 1,
+              "tracking": 20
+            },
+            "initFunctions": "<[BallisticAttack]>"
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "internalModules": [
+        {
+          "class": "BaseModule",
+          "state": "active",
+          "uuid": "035a3577-fe41-4092-90fe-19ac44572880-1776185736962",
+          "characteristics": {
+            "main": {
+              "name": "Внешний радиатор S",
+              "type": "Термодинамика",
+              "category": "Радиатор",
+              "size": 1,
+              "position": "internal",
+              "tags": [
+                "externalradiator",
+                "cooler"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "-4 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>consumption_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.body.signature",
+                  "modificationType": "percent",
+                  "modificator": "1.08 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>radiation_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "-0.04 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>signature_penalty_modifier']",
+                  "isAffectedByInterference": true
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0
+          },
+          "previousState": "active",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "BaseModule",
+          "state": "online",
+          "uuid": "ba1bb614-f9aa-43b4-a520-ffb31304e6a0-1776185758588",
+          "characteristics": {
+            "main": {
+              "name": "Проф. Особенность типа «Пионер»",
+              "type": "Проф. Особенность типа",
+              "category": "Проф. Особенность Фрегата",
+              "size": 0,
+              "position": "internal",
+              "tags": [
+                "stp"
+              ]
+            },
+            "activation": "passive",
+            "modificators": {
+              "offline": [],
+              "online": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.module_modifiers.offence>ballistic>damage_modifier",
+                  "modificationType": "number",
+                  "modificator": 0.2,
+                  "isAffectedByInterference": false
+                }
+              ],
+              "active": [],
+              "overload": []
+            },
+            "interference": 0
+          },
+          "previousState": "online",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    },
+    "KK Pioner 2": {
+      "class": "ShipObject",
+      "x": 2172.549019607843,
+      "y": 1788.235294117647,
+      "visible": true,
+      "id": "KK Pioner 2",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 18,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": false
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/Fregate.svg",
+          "size": 30,
+          "color": "#ff0000"
+        }
+      },
+      "step": 6,
+      "livetime": 18,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        19.69615506024416,
+        3.4729635533386083
+      ],
+      "direction": 80,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 300,
+            "armor": 800,
+            "barrier": 0
+          },
+          "temperature": 0,
+          "charge": 250,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 2,
+            "core": 2,
+            "mass": 1067000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 30,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 150,
+          "jumpdistance": 0,
+          "maneuverability": 3,
+          "sensors_power": 0,
+          "capture_range": 25000,
+          "capacitor": {
+            "charge": 250,
+            "generation": 30
+          },
+          "slots": {
+            "external": 3,
+            "internal": 3
+          },
+          "hp": {
+            "hull": 300,
+            "armor": 800,
+            "barrier": 0
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 300,
+          "armor": 800,
+          "barrier": null
+        },
+        "temperature": 0,
+        "charge": 250,
+        "fuel": 0
+      },
+      "externalModules": [
+        {
+          "class": "BaseModule",
+          "state": "offline",
+          "uuid": "c65e3cca-1445-4327-aef4-82457a5a4736-1776185792850",
+          "characteristics": {
+            "main": {
+              "name": "Пулемёт гатлинга «Аккорд» M",
+              "type": "Орудия",
+              "category": "Баллистика",
+              "size": 2,
+              "position": "external",
+              "tags": [
+                "gun",
+                "offencive",
+                "ballistic"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": 0.02,
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": -3,
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "target",
+                  "characteristic": "dynamic.recived_damage.kinetic",
+                  "modificationType": "number",
+                  "modificator": "module.functionsSharedData.perStep.damage",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0,
+            "additionalInfo": {
+              "baseDamage": 45,
+              "targetHeating": 0,
+              "effectiveRange": 5000,
+              "penaltyStep": 2000,
+              "penalty": 1,
+              "tracking": 20
+            },
+            "initFunctions": "<[BallisticAttack]>"
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "internalModules": [
+        {
+          "class": "BaseModule",
+          "state": "active",
+          "uuid": "09353dba-bb87-4d79-a94e-163039df0ac3-1776185739977",
+          "characteristics": {
+            "main": {
+              "name": "Внешний радиатор S",
+              "type": "Термодинамика",
+              "category": "Радиатор",
+              "size": 1,
+              "position": "internal",
+              "tags": [
+                "externalradiator",
+                "cooler"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "-4 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>consumption_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.body.signature",
+                  "modificationType": "percent",
+                  "modificator": "1.08 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>radiation_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "-0.04 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>signature_penalty_modifier']",
+                  "isAffectedByInterference": true
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0
+          },
+          "previousState": "active",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "BaseModule",
+          "state": "online",
+          "uuid": "f9d38ec1-8da0-4496-af85-329c65e6adee-1776185770412",
+          "characteristics": {
+            "main": {
+              "name": "Проф. Особенность типа «Пионер»",
+              "type": "Проф. Особенность типа",
+              "category": "Проф. Особенность Фрегата",
+              "size": 0,
+              "position": "internal",
+              "tags": [
+                "stp"
+              ]
+            },
+            "activation": "passive",
+            "modificators": {
+              "offline": [],
+              "online": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.module_modifiers.offence>ballistic>damage_modifier",
+                  "modificationType": "number",
+                  "modificator": 0.2,
+                  "isAffectedByInterference": false
+                }
+              ],
+              "active": [],
+              "overload": []
+            },
+            "interference": 0
+          },
+          "previousState": "online",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    },
+    "KK Pioner 3": {
+      "class": "ShipObject",
+      "x": 6431.372549019608,
+      "y": 2086.2745098039213,
+      "visible": true,
+      "id": "KK Pioner 3",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 18,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": false
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/Fregate.svg",
+          "size": 30,
+          "color": "#ff0000"
+        }
+      },
+      "step": 6,
+      "livetime": 18,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        -14.942920471376183,
+        -1.3073361412148736
+      ],
+      "direction": -95,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 300,
+            "armor": 800,
+            "barrier": 0
+          },
+          "temperature": 0,
+          "charge": 250,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 2,
+            "core": 2,
+            "mass": 1067000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 30,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 150,
+          "jumpdistance": 0,
+          "maneuverability": 3,
+          "sensors_power": 0,
+          "capture_range": 25000,
+          "capacitor": {
+            "charge": 250,
+            "generation": 30
+          },
+          "slots": {
+            "external": 3,
+            "internal": 3
+          },
+          "hp": {
+            "hull": 300,
+            "armor": 800,
+            "barrier": 0
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 300,
+          "armor": 800,
+          "barrier": null
+        },
+        "temperature": 0,
+        "charge": 250,
+        "fuel": 0
+      },
+      "externalModules": [
+        {
+          "class": "BaseModule",
+          "state": "offline",
+          "uuid": "202790f9-5bfd-4f55-9880-799fddce1639-1776185787916",
+          "characteristics": {
+            "main": {
+              "name": "Пулемёт гатлинга «Аккорд» M",
+              "type": "Орудия",
+              "category": "Баллистика",
+              "size": 2,
+              "position": "external",
+              "tags": [
+                "gun",
+                "offencive",
+                "ballistic"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": 0.02,
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": -3,
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "target",
+                  "characteristic": "dynamic.recived_damage.kinetic",
+                  "modificationType": "number",
+                  "modificator": "module.functionsSharedData.perStep.damage",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0,
+            "additionalInfo": {
+              "baseDamage": 45,
+              "targetHeating": 0,
+              "effectiveRange": 5000,
+              "penaltyStep": 2000,
+              "penalty": 1,
+              "tracking": 20
+            },
+            "initFunctions": "<[BallisticAttack]>"
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "internalModules": [
+        {
+          "class": "BaseModule",
+          "state": "active",
+          "uuid": "e337fb40-c219-4029-8cb2-48bb14d62cd2-1776185742368",
+          "characteristics": {
+            "main": {
+              "name": "Внешний радиатор S",
+              "type": "Термодинамика",
+              "category": "Радиатор",
+              "size": 1,
+              "position": "internal",
+              "tags": [
+                "externalradiator",
+                "cooler"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "-4 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>consumption_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.body.signature",
+                  "modificationType": "percent",
+                  "modificator": "1.08 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>radiation_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "-0.04 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>signature_penalty_modifier']",
+                  "isAffectedByInterference": true
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0
+          },
+          "previousState": "active",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "BaseModule",
+          "state": "online",
+          "uuid": "24458fd6-1d49-425f-8145-0be57e31b3c6-1776185774028",
+          "characteristics": {
+            "main": {
+              "name": "Проф. Особенность типа «Пионер»",
+              "type": "Проф. Особенность типа",
+              "category": "Проф. Особенность Фрегата",
+              "size": 0,
+              "position": "internal",
+              "tags": [
+                "stp"
+              ]
+            },
+            "activation": "passive",
+            "modificators": {
+              "offline": [],
+              "online": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.module_modifiers.offence>ballistic>damage_modifier",
+                  "modificationType": "number",
+                  "modificator": 0.2,
+                  "isAffectedByInterference": false
+                }
+              ],
+              "active": [],
+              "overload": []
+            },
+            "interference": 0
+          },
+          "previousState": "online",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    },
+    "KK Shilo": {
+      "class": "ShipObject",
+      "x": 3596.078431372549,
+      "y": 2282.3529411764707,
+      "visible": true,
+      "id": "KK Shilo",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 18,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": false
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/Destroyer.svg",
+          "size": 70,
+          "color": "#ff0000"
+        }
+      },
+      "step": 6,
+      "livetime": 18,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        14.772116295183121,
+        -2.6047226650039548
+      ],
+      "direction": 100,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 750,
+            "armor": 750,
+            "barrier": 800
+          },
+          "temperature": 0,
+          "charge": 550,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 3,
+            "core": 3,
+            "mass": 1540000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 45,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 120,
+          "jumpdistance": 0,
+          "maneuverability": 2,
+          "sensors_power": 0,
+          "capture_range": 35000,
+          "capacitor": {
+            "charge": 550,
+            "generation": 50
+          },
+          "slots": {
+            "external": 6,
+            "internal": 7
+          },
+          "hp": {
+            "hull": 750,
+            "armor": 750,
+            "barrier": 800
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 750,
+          "armor": 750,
+          "barrier": 800
+        },
+        "temperature": 0,
+        "charge": 550,
+        "fuel": 0
+      },
+      "externalModules": [
+        {
+          "class": "SubgridLauncherModule",
+          "state": "offline",
+          "uuid": "8ca8f409-6818-4349-933e-19db0d264178-1776185867503",
+          "characteristics": {
+            "main": {
+              "name": "ПУ Ракет «Нора»",
+              "type": "ПУ Ракет",
+              "category": "Орудия",
+              "size": 1,
+              "position": "external",
+              "tags": [
+                "catapult",
+                "subgrid"
+              ],
+              "class": "SubgridLauncherModule"
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "0.02",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0,
+            "launcher": {
+              "heading": 0,
+              "instances": [
+                {
+                  "vector": [
+                    0,
+                    50
+                  ],
+                  "headingOffset": 0,
+                  "distanceOffset": 15,
+                  "subgridRotation": 0,
+                  "fire": {
+                    "type": "single",
+                    "delay": 0
+                  },
+                  "subgrid": {
+                    "class": "SelfguidedSubgridObject",
+                    "dataRef": "missile-s"
+                  }
+                }
+              ]
+            }
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "SubgridLauncherModule",
+          "state": "offline",
+          "uuid": "fbd5ee04-bd7b-4a42-870d-ceccddf724ad-1776185869386",
+          "characteristics": {
+            "main": {
+              "name": "ПУ Ракет «Нора»",
+              "type": "ПУ Ракет",
+              "category": "Орудия",
+              "size": 1,
+              "position": "external",
+              "tags": [
+                "catapult",
+                "subgrid"
+              ],
+              "class": "SubgridLauncherModule"
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "0.02",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0,
+            "launcher": {
+              "heading": 0,
+              "instances": [
+                {
+                  "vector": [
+                    0,
+                    50
+                  ],
+                  "headingOffset": 0,
+                  "distanceOffset": 15,
+                  "subgridRotation": 0,
+                  "fire": {
+                    "type": "single",
+                    "delay": 0
+                  },
+                  "subgrid": {
+                    "class": "SelfguidedSubgridObject",
+                    "dataRef": "missile-s"
+                  }
+                }
+              ]
+            }
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "SubgridLauncherModule",
+          "state": "offline",
+          "uuid": "dcbe962d-f233-4da0-b318-cabd387ece31-1776185874605",
+          "characteristics": {
+            "main": {
+              "name": "ПУ Ракет «Нора»",
+              "type": "ПУ Ракет",
+              "category": "Орудия",
+              "size": 1,
+              "position": "external",
+              "tags": [
+                "catapult",
+                "subgrid"
+              ],
+              "class": "SubgridLauncherModule"
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "0.02",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0,
+            "launcher": {
+              "heading": 0,
+              "instances": [
+                {
+                  "vector": [
+                    0,
+                    50
+                  ],
+                  "headingOffset": 0,
+                  "distanceOffset": 15,
+                  "subgridRotation": 0,
+                  "fire": {
+                    "type": "single",
+                    "delay": 0
+                  },
+                  "subgrid": {
+                    "class": "SelfguidedSubgridObject",
+                    "dataRef": "missile-s"
+                  }
+                }
+              ]
+            }
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "internalModules": [
+        {
+          "class": "BaseModule",
+          "state": "offline",
+          "uuid": "61a73c8a-4eaf-41e3-9b5c-2cfa05f60893-1776185896551",
+          "characteristics": {
+            "main": {
+              "name": "Система целеуказания",
+              "type": "РЭБ",
+              "category": "Системы целеуказания",
+              "size": 2,
+              "position": "internal",
+              "tags": [
+                "targetpainer",
+                "ew"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "0.01 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>heating_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "-6 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>capacitor_consumption_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "target",
+                  "characteristic": "constant.body.signature",
+                  "modificationType": "percent",
+                  "modificator": "( 1.7 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>EW_strenght_modifier'] ) * ( 1 - target.characteristics.constant.resistance.EW )",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "BaseModule",
+          "state": "offline",
+          "uuid": "c9ec0092-3e6f-4bc7-8434-ecae0f0f8097-1776185917812",
+          "characteristics": {
+            "main": {
+              "name": "Модуль откачки барьера S",
+              "type": "Восстановление",
+              "category": "Система откачки барьера",
+              "size": 2,
+              "position": "internal",
+              "tags": [
+                "shieldrecharger"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "module.characteristics.additionalInfo.baseConsumption * parent.currentCharacteristics.constant.module_modifiers['engineering>barrier>active_recharge_consumption']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "module.characteristics.additionalInfo.baseHeating * parent.currentCharacteristics.constant.module_modifiers['engineering>barrier>active_recharge_heating']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "dynamic.hp.barrier",
+                  "modificationType": "number",
+                  "modificator": "module.characteristics.additionalInfo.baseRecharge * parent.currentCharacteristics.constant.module_modifiers['engineering>barrier>active_recharge_modifier']",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "interference": 0,
+            "reload": 0,
+            "cycle": 1,
+            "additionalInfo": {
+              "baseRecharge": 28,
+              "baseHeating": 0.05,
+              "baseConsumption": -15
+            }
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "BaseModule",
+          "state": "active",
+          "uuid": "7aef6a0c-1c75-43fb-831a-97975b1f2097-1776185923770",
+          "characteristics": {
+            "main": {
+              "name": "Внешний радиатор M",
+              "type": "Термодинамика",
+              "category": "Радиатор",
+              "size": 2,
+              "position": "internal",
+              "tags": [
+                "externalradiator",
+                "cooler"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "-10 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>consumption_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.body.signature",
+                  "modificationType": "percent",
+                  "modificator": "1.15 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>radiation_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "-0.12 * parent.currentCharacteristics.constant.module_modifiers['engineering>thermodynamic>signature_penalty_modifier']",
+                  "isAffectedByInterference": true
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": 0
+          },
+          "previousState": "active",
+          "inOnlineSteps": 3,
+          "inStageSteps": 2,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        },
+        {
+          "class": "BaseModule",
+          "state": "offline",
+          "uuid": "b78d7f1c-32fa-4480-b294-6f5d459a7f21-1776185943614",
+          "characteristics": {
+            "main": {
+              "name": "Форсажная камера S",
+              "type": "Мобильность",
+              "category": "Форсажная камера",
+              "size": 1,
+              "position": "internal",
+              "tags": [
+                "afterburner",
+                "maneuverbuff"
+              ]
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [
+                {
+                  "target": "this",
+                  "characteristic": "constant.capacitor.generation",
+                  "modificationType": "number",
+                  "modificator": "-15 * parent.currentCharacteristics.constant.module_modifiers['engineering>mobility>afterburner>capacitor_consumption_modifier']",
+                  "isAffectedByInterference": false
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.acceleration",
+                  "modificationType": "percent",
+                  "modificator": "1.4 * parent.currentCharacteristics.constant.module_modifiers['engineering>mobility>afterburner>effectiveness_modifier']",
+                  "isAffectedByInterference": true
+                },
+                {
+                  "target": "this",
+                  "characteristic": "constant.heating",
+                  "modificationType": "number",
+                  "modificator": "0.03 * parent.currentCharacteristics.constant.module_modifiers['engineering>mobility>afterburner>heating_modifier']",
+                  "isAffectedByInterference": false
+                }
+              ],
+              "overload": []
+            },
+            "cycle": 1,
+            "reload": 0,
+            "interference": -1
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 3,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          }
+        }
+      ],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    },
+    "KK Station": {
+      "class": "ShipObject",
+      "x": 2674.509803921568,
+      "y": 1003.9215686274509,
+      "visible": true,
+      "id": "KK Station",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 12,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": true
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/Asteroid_Station_Icon.png",
+          "size": 500,
+          "color": "#ff0000"
+        }
+      },
+      "step": 6,
+      "livetime": 12,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        0,
+        0
+      ],
+      "direction": 180,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 1000,
+            "armor": 500,
+            "barrier": 2500
+          },
+          "temperature": 0,
+          "charge": 1250,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 4,
+            "core": 3,
+            "mass": 11500000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 190,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 90,
+          "jumpdistance": 0,
+          "maneuverability": 1,
+          "sensors_power": 0,
+          "capture_range": 50000,
+          "capacitor": {
+            "charge": 1250,
+            "generation": 100
+          },
+          "slots": {
+            "external": 8,
+            "internal": 14
+          },
+          "hp": {
+            "hull": 1000,
+            "armor": 500,
+            "barrier": 2500
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 1000,
+          "armor": 500,
+          "barrier": 2500
+        },
+        "temperature": 0,
+        "charge": 1250,
+        "fuel": 0
+      },
+      "externalModules": [],
+      "internalModules": [
+        {
+          "class": "DroneLauncherModule",
+          "state": "offline",
+          "uuid": "4ff8b5ec-afe5-4a4b-ac20-b0a15f3f912a-1776186510820",
+          "characteristics": {
+            "main": {
+              "name": "Ангар дрона «Кадуцей»",
+              "type": "Ангары",
+              "category": "Малые ангары",
+              "size": 1,
+              "position": "internal",
+              "tags": [],
+              "class": "DroneLauncherModule"
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [],
+              "overload": []
+            },
+            "interference": 0,
+            "launcher": {
+              "vector": [
+                0,
+                50
+              ],
+              "heading": 180,
+              "subgridRotation": 0,
+              "distanceOffset": 0,
+              "backupDistance": 100,
+              "recovery": {
+                "fuel": 12,
+                "temperature": -0.01,
+                "hp": {
+                  "armor": 4,
+                  "hull": 10
+                }
+              }
+            },
+            "external": {
+              "battleship_template": {
+                "class": "DroneObject",
+                "visible": true,
+                "id": "Caduceus Drone",
+                "parent": null,
+                "children": {},
+                "tasks": [],
+                "collision": true,
+                "velocity": [
+                  0,
+                  0
+                ],
+                "direction": 180,
+                "forces": [],
+                "baseCharacteristics": {
+                  "dynamic": {
+                    "recived_damage": {
+                      "kinetic": 0,
+                      "high_explosive": 0,
+                      "electro_magnetic": 0,
+                      "thermal": 0
+                    },
+                    "hp": {
+                      "hull": 200,
+                      "armor": 0,
+                      "barrier": 0
+                    },
+                    "temperature": 0,
+                    "charge": 10,
+                    "fuel": 1200
+                  },
+                  "constant": {
+                    "body": {
+                      "tonnage": -1,
+                      "core": 3,
+                      "mass": 400,
+                      "layers": [
+                        "drone"
+                      ],
+                      "containers": {
+                        "storage": 0,
+                        "hangar": 0
+                      },
+                      "signature": 40,
+                      "subgrid": {
+                        "size": 40,
+                        "category": "battle",
+                        "fuel": 1200,
+                        "autonomous": false,
+                        "drone": {
+                          "safe_distance": 2500
+                        }
+                      }
+                    },
+                    "acceleration": 50,
+                    "jumpdistance": 0,
+                    "maneuverability": 4,
+                    "sensors_power": 0,
+                    "capture_range": 5000,
+                    "capacitor": {
+                      "charge": 10,
+                      "generation": 2
+                    },
+                    "slots": {
+                      "external": 1,
+                      "internal": 2
+                    },
+                    "hp": {
+                      "hull": 200,
+                      "armor": 0,
+                      "barrier": 0
+                    },
+                    "collision_energy_distribution": {
+                      "damage": 0.69,
+                      "velocity": 0.3,
+                      "heat": 0.01
+                    },
+                    "temperature": 1,
+                    "heating": 0,
+                    "resistance": {
+                      "kinetic": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "high_explosive": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "electro_magnetic": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "thermal": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "EW": 0
+                    },
+                    "barrier": {
+                      "passive_regeneration": 0.01,
+                      "resonance": {
+                        "frequency": 0.3,
+                        "tendency": 0.01,
+                        "range": 0.4
+                      }
+                    }
+                  }
+                },
+                "dynamicCharacteristics": {
+                  "recived_damage": {
+                    "kinetic": 0,
+                    "high_explosive": 0,
+                    "electro_magnetic": 0,
+                    "thermal": 0
+                  },
+                  "hp": {
+                    "hull": 200,
+                    "armor": 0,
+                    "barrier": 0
+                  },
+                  "temperature": 0,
+                  "charge": 10,
+                  "fuel": 1200
+                },
+                "externalModules": [],
+                "internalModules": [
+                  {
+                    "class": "BaseModule",
+                    "state": "active",
+                    "uuid": "0c9947a6-f22d-4413-be31-8af8e47d8d05-1775601637166",
+                    "characteristics": {
+                      "main": {
+                        "name": "Система дистанционной инъекции барьера",
+                        "type": "Восстановление",
+                        "category": "Система откачки барьера",
+                        "size": 2,
+                        "position": "internal",
+                        "tags": [
+                          "shieldrecharger"
+                        ]
+                      },
+                      "activation": "active",
+                      "modificators": {
+                        "offline": [],
+                        "online": [],
+                        "active": [
+                          {
+                            "target": "target",
+                            "characteristic": "dynamic.hp.barrier",
+                            "modificationType": "number",
+                            "modificator": "50 * parent.currentCharacteristics.constant.module_modifiers['support>shield_injection_modifier']",
+                            "isAffectedByInterference": false
+                          }
+                        ],
+                        "overload": []
+                      },
+                      "interference": 0,
+                      "reload": 0,
+                      "cycle": 1,
+                      "additionalInfo": {
+                        "baseRecharge": 28,
+                        "baseHeating": 0,
+                        "baseConsumption": 0
+                      }
+                    },
+                    "previousState": "offline",
+                    "inOnlineSteps": 0,
+                    "inStageSteps": 0,
+                    "functionsSharedData": {
+                      "perStep": {},
+                      "perState": {},
+                      "uncleared": {}
+                    }
+                  }
+                ],
+                "otherModules": [],
+                "__version": "1.11.0"
+              }
+            }
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 1,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          },
+          "launched": null,
+          "storedDrone": {
+            "recived_damage": {
+              "kinetic": 0,
+              "high_explosive": 0,
+              "electro_magnetic": 0,
+              "thermal": 0
+            },
+            "hp": {
+              "hull": 200,
+              "armor": 0,
+              "barrier": 0
+            },
+            "temperature": 0,
+            "charge": 10,
+            "fuel": 1200
+          }
+        },
+        {
+          "class": "DroneLauncherModule",
+          "state": "offline",
+          "uuid": "ff5b3ea8-4103-43b4-b712-bb85452449b4-1776186512603",
+          "characteristics": {
+            "main": {
+              "name": "Ангар дрона «Кадуцей»",
+              "type": "Ангары",
+              "category": "Малые ангары",
+              "size": 1,
+              "position": "internal",
+              "tags": [],
+              "class": "DroneLauncherModule"
+            },
+            "activation": "active",
+            "modificators": {
+              "offline": [],
+              "online": [],
+              "active": [],
+              "overload": []
+            },
+            "interference": 0,
+            "launcher": {
+              "vector": [
+                0,
+                50
+              ],
+              "heading": 180,
+              "subgridRotation": 0,
+              "distanceOffset": 0,
+              "backupDistance": 100,
+              "recovery": {
+                "fuel": 12,
+                "temperature": -0.01,
+                "hp": {
+                  "armor": 4,
+                  "hull": 10
+                }
+              }
+            },
+            "external": {
+              "battleship_template": {
+                "class": "DroneObject",
+                "visible": true,
+                "id": "Caduceus Drone",
+                "parent": null,
+                "children": {},
+                "tasks": [],
+                "collision": true,
+                "velocity": [
+                  0,
+                  0
+                ],
+                "direction": 180,
+                "forces": [],
+                "baseCharacteristics": {
+                  "dynamic": {
+                    "recived_damage": {
+                      "kinetic": 0,
+                      "high_explosive": 0,
+                      "electro_magnetic": 0,
+                      "thermal": 0
+                    },
+                    "hp": {
+                      "hull": 200,
+                      "armor": 0,
+                      "barrier": 0
+                    },
+                    "temperature": 0,
+                    "charge": 10,
+                    "fuel": 1200
+                  },
+                  "constant": {
+                    "body": {
+                      "tonnage": -1,
+                      "core": 3,
+                      "mass": 400,
+                      "layers": [
+                        "drone"
+                      ],
+                      "containers": {
+                        "storage": 0,
+                        "hangar": 0
+                      },
+                      "signature": 40,
+                      "subgrid": {
+                        "size": 40,
+                        "category": "battle",
+                        "fuel": 1200,
+                        "autonomous": false,
+                        "drone": {
+                          "safe_distance": 2500
+                        }
+                      }
+                    },
+                    "acceleration": 50,
+                    "jumpdistance": 0,
+                    "maneuverability": 4,
+                    "sensors_power": 0,
+                    "capture_range": 5000,
+                    "capacitor": {
+                      "charge": 10,
+                      "generation": 2
+                    },
+                    "slots": {
+                      "external": 1,
+                      "internal": 2
+                    },
+                    "hp": {
+                      "hull": 200,
+                      "armor": 0,
+                      "barrier": 0
+                    },
+                    "collision_energy_distribution": {
+                      "damage": 0.69,
+                      "velocity": 0.3,
+                      "heat": 0.01
+                    },
+                    "temperature": 1,
+                    "heating": 0,
+                    "resistance": {
+                      "kinetic": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "high_explosive": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "electro_magnetic": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "thermal": {
+                        "hull": 0,
+                        "armor": 0,
+                        "barrier": 0
+                      },
+                      "EW": 0
+                    },
+                    "barrier": {
+                      "passive_regeneration": 0.01,
+                      "resonance": {
+                        "frequency": 0.3,
+                        "tendency": 0.01,
+                        "range": 0.4
+                      }
+                    }
+                  }
+                },
+                "dynamicCharacteristics": {
+                  "recived_damage": {
+                    "kinetic": 0,
+                    "high_explosive": 0,
+                    "electro_magnetic": 0,
+                    "thermal": 0
+                  },
+                  "hp": {
+                    "hull": 200,
+                    "armor": 0,
+                    "barrier": 0
+                  },
+                  "temperature": 0,
+                  "charge": 10,
+                  "fuel": 1200
+                },
+                "externalModules": [],
+                "internalModules": [
+                  {
+                    "class": "BaseModule",
+                    "state": "active",
+                    "uuid": "0c9947a6-f22d-4413-be31-8af8e47d8d05-1775601637166",
+                    "characteristics": {
+                      "main": {
+                        "name": "Система дистанционной инъекции барьера",
+                        "type": "Восстановление",
+                        "category": "Система откачки барьера",
+                        "size": 2,
+                        "position": "internal",
+                        "tags": [
+                          "shieldrecharger"
+                        ]
+                      },
+                      "activation": "active",
+                      "modificators": {
+                        "offline": [],
+                        "online": [],
+                        "active": [
+                          {
+                            "target": "target",
+                            "characteristic": "dynamic.hp.barrier",
+                            "modificationType": "number",
+                            "modificator": "50 * parent.currentCharacteristics.constant.module_modifiers['support>shield_injection_modifier']",
+                            "isAffectedByInterference": false
+                          }
+                        ],
+                        "overload": []
+                      },
+                      "interference": 0,
+                      "reload": 0,
+                      "cycle": 1,
+                      "additionalInfo": {
+                        "baseRecharge": 28,
+                        "baseHeating": 0,
+                        "baseConsumption": 0
+                      }
+                    },
+                    "previousState": "offline",
+                    "inOnlineSteps": 0,
+                    "inStageSteps": 0,
+                    "functionsSharedData": {
+                      "perStep": {},
+                      "perState": {},
+                      "uncleared": {}
+                    }
+                  }
+                ],
+                "otherModules": [],
+                "__version": "1.11.0"
+              }
+            }
+          },
+          "previousState": "offline",
+          "inOnlineSteps": 0,
+          "inStageSteps": 1,
+          "functionsSharedData": {
+            "perStep": {},
+            "perState": {},
+            "uncleared": {}
+          },
+          "launched": null,
+          "storedDrone": {
+            "recived_damage": {
+              "kinetic": 0,
+              "high_explosive": 0,
+              "electro_magnetic": 0,
+              "thermal": 0
+            },
+            "hp": {
+              "hull": 200,
+              "armor": 0,
+              "barrier": 0
+            },
+            "temperature": 0,
+            "charge": 10,
+            "fuel": 1200
+          }
+        }
+      ],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    },
+    "3f3c7": {
+      "class": "ShipObject",
+      "x": 4200,
+      "y": 2500,
+      "visible": true,
+      "id": "3f3c7",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 6,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": true
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/mining.png",
+          "size": 400,
+          "color": "#ffffff"
+        }
+      },
+      "step": 6,
+      "livetime": 6,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        0,
+        0
+      ],
+      "direction": 180,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 1000,
+            "armor": 500,
+            "barrier": 2500
+          },
+          "temperature": 0,
+          "charge": 1250,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 4,
+            "core": 3,
+            "mass": 11500000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 190,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 90,
+          "jumpdistance": 0,
+          "maneuverability": 1,
+          "sensors_power": 0,
+          "capture_range": 50000,
+          "capacitor": {
+            "charge": 1250,
+            "generation": 100
+          },
+          "slots": {
+            "external": 8,
+            "internal": 14
+          },
+          "hp": {
+            "hull": 1000,
+            "armor": 500,
+            "barrier": 2500
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 1000,
+          "armor": 500,
+          "barrier": 2500
+        },
+        "temperature": 0,
+        "charge": 1250,
+        "fuel": 0
+      },
+      "externalModules": [],
+      "internalModules": [],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    },
+    "290d9": {
+      "class": "ShipObject",
+      "x": 1992.156862745098,
+      "y": 3215.686274509804,
+      "visible": true,
+      "id": "290d9",
+      "parent": null,
+      "children": {
+        "contactController": {
+          "class": "ContactController",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "contactController",
+          "parent": "inherted",
+          "children": {},
+          "step": 6,
+          "livetime": 0,
+          "tasks": [],
+          "capturedTargets": [],
+          "currentTarget": null
+        },
+        "shipStatsHud": {
+          "class": "ShipStatsHUD",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "shipStatsHud",
+          "parent": "inherted",
+          "children": {},
+          "distance": -300,
+          "bar": {
+            "height": 250,
+            "width": 40,
+            "padding": 7,
+            "border": 7,
+            "gap": 30
+          }
+        },
+        "vectorHud": {
+          "class": "VectorHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "vectorHud",
+          "parent": "inherted",
+          "children": {},
+          "settings": {
+            "directionLength": 500,
+            "nextStepPointSize": 20,
+            "showRDirection": true,
+            "showVDirection": true,
+            "showNextSteps": true
+          }
+        },
+        "signatureHud": {
+          "class": "SignatureShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "signatureHud",
+          "parent": "inherted",
+          "children": {},
+          "lineWidth": 20
+        },
+        "hud": {
+          "class": "BasicDataHud",
+          "x": 0,
+          "y": 0,
+          "visible": false,
+          "id": "hud",
+          "parent": "inherted",
+          "children": {},
+          "data": [
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `${hud.parent.id}`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `pos: ${Math.round(hud.parent._x)}m, ${Math.round(hud.parent._y)}m`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vel: ${Math.round(hud.parent.velocity.x)}m/s, ${Math.round(hud.parent.velocity.y)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `speed: ${Math.round(hud.parent.velocity.length)}m/s`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `dir: ${Math.round(hud.parent.direction)}deg`"
+              }
+            },
+            {
+              "func": {
+                "args": "hud",
+                "body": "return `vdir: ${toRealDirection(Math.round(Math.atan2(hud.parent.velocity.x, hud.parent.velocity.y) / Math.PI * 180) || 0)}deg`"
+              }
+            }
+          ],
+          "length": 400,
+          "padding": 150,
+          "direction": 60
+        },
+        "image": {
+          "class": "SpriteShower",
+          "x": 0,
+          "y": 0,
+          "visible": true,
+          "id": "image",
+          "parent": "inherted",
+          "children": {},
+          "image": "https://makar-ts.github.io/HayatBattleshipCalculator/img/mining.png",
+          "size": 350,
+          "color": "#ffffff"
+        }
+      },
+      "step": 6,
+      "livetime": 0,
+      "tasks": [],
+      "collision": true,
+      "velocity": [
+        0,
+        0
+      ],
+      "direction": 180,
+      "forces": [],
+      "baseCharacteristics": {
+        "dynamic": {
+          "recived_damage": {
+            "kinetic": 0,
+            "high_explosive": 0,
+            "electro_magnetic": 0,
+            "thermal": 0
+          },
+          "hp": {
+            "hull": 1000,
+            "armor": 500,
+            "barrier": 2500
+          },
+          "temperature": 0,
+          "charge": 1250,
+          "fuel": 0
+        },
+        "constant": {
+          "body": {
+            "tonnage": 4,
+            "core": 3,
+            "mass": 11500000,
+            "layers": [
+              "battleship"
+            ],
+            "containers": {
+              "storage": 0,
+              "hangar": 0
+            },
+            "signature": 190,
+            "subgrid": {
+              "size": 0,
+              "category": "battle",
+              "fuel": -1
+            }
+          },
+          "acceleration": 90,
+          "jumpdistance": 0,
+          "maneuverability": 1,
+          "sensors_power": 0,
+          "capture_range": 50000,
+          "capacitor": {
+            "charge": 1250,
+            "generation": 100
+          },
+          "slots": {
+            "external": 8,
+            "internal": 14
+          },
+          "hp": {
+            "hull": 1000,
+            "armor": 500,
+            "barrier": 2500
+          },
+          "collision_energy_distribution": {
+            "damage": 0.69,
+            "velocity": 0.3,
+            "heat": 0.01
+          },
+          "temperature": 1,
+          "heating": 0,
+          "resistance": {
+            "kinetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "high_explosive": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "electro_magnetic": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "thermal": {
+              "hull": 0,
+              "armor": 0,
+              "barrier": 0
+            },
+            "EW": 0
+          },
+          "barrier": {
+            "passive_regeneration": 0.01,
+            "resonance": {
+              "frequency": 0.3,
+              "tendency": 0.01,
+              "range": 0.4
+            }
+          }
+        }
+      },
+      "dynamicCharacteristics": {
+        "recived_damage": {
+          "kinetic": 0,
+          "high_explosive": 0,
+          "electro_magnetic": 0,
+          "thermal": 0
+        },
+        "hp": {
+          "hull": 1000,
+          "armor": 500,
+          "barrier": 2500
+        },
+        "temperature": 0,
+        "charge": 1250,
+        "fuel": 0
+      },
+      "externalModules": [],
+      "internalModules": [],
+      "otherModules": [],
+      "dices": {
+        "contactQuality": 10,
+        "maneuvering": 0
+      }
+    }
+  }
+}

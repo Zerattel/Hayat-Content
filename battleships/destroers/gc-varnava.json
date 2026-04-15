@@ -1,0 +1,31 @@
+{
+  "dynamic": {
+    "hp": {
+      "hull": 500,
+      "armor": 900,
+      "barrier": 300
+    },
+    "charge": 630
+  },
+  "constant": {
+    "body": {
+      "tonnage": 3,
+      "core": 3,
+      "mass": 1300000,
+      "signature": 69
+    },
+    "capacitor": {
+      "charge": 630,
+      "generation": 30
+    },
+    "slots": {
+      "external": 5,
+      "internal": 7
+    },
+    "hp": {
+      "hull": 500,
+      "armor": 900,
+      "barrier": 300
+    }
+  }
+}

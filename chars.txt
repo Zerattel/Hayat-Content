@@ -6,12 +6,13 @@ parent.currentCharacteristics.constant.module_modifiers['']
 
 // Модификаторы для вооружения
 offence
+//Вращающаяся вращещня
+offence>tracking_modifier
 
 // Модификаторы для баллистики
 offence>ballistic
 offence>ballistic>effective_distance_modifier
 offence>ballistic>damage_modifier
-offence>ballistic>tracking_modifier
 offence>ballistic>capacitor_consumption_modifier
 offence>ballistic>heating_modifier
 offence>ballistic>target_heating_modifier
@@ -20,7 +21,6 @@ offence>ballistic>target_heating_modifier
 offence>laser
 offence>laser>effective_distance_modifier
 offence>laser>damage_modifier
-offence>laser>tracking_modifier
 offence>laser>capacitor_consumption_modifier
 offence>laser>heating_modifier
 offence>laser>target_heating_modifier
