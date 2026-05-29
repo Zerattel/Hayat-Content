@@ -1,26 +1,10 @@
 const { default: BaseModule } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/canvas/objects/map/module/baseModule.js");
 const { default: ShipObject } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/canvas/objects/map/ship/shipObject.js");
-const { calculateRelativeData } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/controls/show_rdata.js");
 const { log } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/controls/step-logs/log.js");
 const { updateLoading } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/loading.js");
 const { clamp } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/clamp.js");
 const { getFullManeuverability, tonnageToResolution } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/hayat/battleships.js");
 const { point } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/vector/point.js");
-/**
- * @type { Record<string, 
- * (
- *    modificator: {
- *      target: string,
- *      characteristic: string,
- *      modificationType: string,
- *      modificator: number | string,
- *      isAffectedByInterference: boolean
- *    }, 
- *    module: BaseModule,
- *    parent: ShipObject,
- *    target: ShipObject
- *  ) => number }
- */
 
 calculateRelativeData = (obj1, obj2) => {
     const dx = obj2._x - obj1._x;
@@ -48,7 +32,22 @@ calculateRelativeData = (obj1, obj2) => {
 
     return { relSpeed, angularVelocity, distance, adir, rdir };
   }
-  
+/**
+ * @type { Record<string, 
+ * (
+ *    modificator: {
+ *      target: string,
+ *      characteristic: string,
+ *      modificationType: string,
+ *      modificator: number | string,
+ *      isAffectedByInterference: boolean
+ *    }, 
+ *    module: BaseModule,
+ *    parent: ShipObject,
+ *    target: ShipObject
+ *  ) => number }
+ */
+
 function calculateHitChance(parent, target, module, currentContactBonus) {
     // 1. ВСТРЕЧНЫЙ БРОСОК: Контакт vs Уклонение
     const targetManeuverability = getFullManeuverability(target.currentCharacteristics, target.dices.maneuvering);
