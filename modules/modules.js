@@ -21,6 +21,34 @@ const { point } = await import("https://makar-ts.github.io/HayatBattleshipCalcul
  *    target: ShipObject
  *  ) => number }
  */
+
+calculateRelativeData = (obj1, obj2) => {
+    const dx = obj2._x - obj1._x;
+    const dy = obj2._y - obj1._y;
+
+    const vel1 = obj1.velocity || {x: 0, y: 0};
+    const vel2 = obj2.velocity || {x: 0, y: 0};
+
+    const relVel = {
+      x: vel2.x - vel1.x,
+      y: vel2.y - vel1.y,
+    };
+    const relSpeed = Math.sqrt(relVel.x ** 2 + relVel.y ** 2);
+
+    const r_mag = Math.sqrt(dx * dx + dy * dy);
+    const cross = dx * relVel.y - dy * relVel.x;
+    const angularVelocity = (cross / (r_mag * r_mag)) / Math.PI * 180;
+
+    const distance = r_mag;
+    const adir = -(
+      Math.round((Math.atan2(obj1._x - obj2._x, obj1._y - obj2._y) / Math.PI) * 180) ||
+        0
+    );
+    const rdir = adir - (obj1.direction || 0);
+
+    return { relSpeed, angularVelocity, distance, adir, rdir };
+  }
+  
 function calculateHitChance(parent, target, module, currentContactBonus) {
     // 1. ВСТРЕЧНЫЙ БРОСОК: Контакт vs Уклонение
     const targetManeuverability = getFullManeuverability(target.currentCharacteristics, target.dices.maneuvering);
