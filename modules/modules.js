@@ -1,3 +1,10 @@
+const { default: BaseModule } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/canvas/objects/map/module/baseModule.js");
+const { default: ShipObject } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/canvas/objects/map/ship/shipObject.js");
+const { calculateRelativeData } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/controls/show_rdata.js");
+const { log } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/controls/step-logs/log.js");
+const { updateLoading } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/loading.js");
+const { clamp } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/clamp.js");
+const { getFullManeuverability, tonnageToResolution } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/hayat/battleships.js");
 const { point } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/vector/point.js");
 /**
  * @type { Record<string, 
