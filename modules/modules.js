@@ -1,3 +1,4 @@
+const { point } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/vector/point.js");
 /**
  * @type { Record<string, 
  * (
