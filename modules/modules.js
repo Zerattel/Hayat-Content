@@ -6,7 +6,7 @@ const { clamp } = await import("https://makar-ts.github.io/HayatBattleshipCalcul
 const { getFullManeuverability, tonnageToResolution } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/hayat/battleships.js");
 const { point } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/vector/point.js");
 
-calculateRelativeData = (obj1, obj2) => {
+const calculateRelativeData = (obj1, obj2) => {
     const dx = obj2._x - obj1._x;
     const dy = obj2._y - obj1._y;
 
