@@ -4,7 +4,7 @@
     "type": "Орудия",
     "category": "Баллистика",
 
-    "size": 1,
+    "size": 3,
     "position": "external",
     "tags": ["gun", "offencive", "ballistic", "distortion"]
   },
