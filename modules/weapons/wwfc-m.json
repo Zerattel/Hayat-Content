@@ -1,0 +1,56 @@
+{
+  "main": {
+    "name": "«Вундерваффе» C - type",
+    "type": "Орудия",
+    "category": "Баллистика",
+
+    "size": 1,
+    "position": "external",
+    "tags": ["gun", "offencive", "ballistic", "distortion"]
+  },
+  "activation": "active",
+  "cycle": 1,
+  "reload": 0,
+
+  "interference": 0,
+
+  "additionalInfo": {
+    "baseDamage": 88,
+    "targetHeating": 2,
+    "effectiveRange": 6000,
+    "penaltyStep": 2000,
+    "penalty": 1,
+    "tracking": 15
+  },
+
+  "initFunctions": "<[BallisticAttack]>",
+
+  "modificators": {
+    "offline": [],
+    "online": [],
+    "active": [
+      {
+        "target": "this",
+        "characteristic": "constant.heating",
+        "modificationType": "number",
+        "modificator": 0.06,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.capacitor.generation",
+        "modificationType": "number",
+        "modificator": -12,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "dynamic.recived_damage.kinetic",
+        "modificationType": "number",
+        "modificator": "module.functionsSharedData.perStep.damage",
+        "isAffectedByInterference": false
+      }
+    ],
+    "overload": []
+  }
+}

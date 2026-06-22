@@ -52,5 +52,8 @@
 "УФ Лазер «Корректор» S": "weapons/corrector.json",
 "УФ Лазер «Тор» M": "weapons/thor.json",
 "УФ Лазер «Один» L": "weapons/odin.json",
+"Вундерваффе S": "weapons/wwfb-s.json",
+"Вундерваффе M": "weapons/wwfb-m.json", 
+"Вундерваффе L": "weapons/wwfb-l.json",
 "Ангар Дрона «Кадуцей»": "hangars/caduceus-hangar.json"
 }
