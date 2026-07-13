@@ -245,6 +245,9 @@ constant.body.containers.hangar
 // радиус сигнатуры
 constant.body.signature
 
+// Контакт
+constant.contact_quality
+
 // параметры если это субтело
 constant.body.subgrid
 constant.body.subgrid.size
