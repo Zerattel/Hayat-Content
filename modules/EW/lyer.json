@@ -1,0 +1,44 @@
+{
+  "main": {
+    "name": "Система радиоподавления «Лжец»",
+    "type": "РЭБ",
+    "category": "Система радиоподавления",
+
+    "size": 2,
+    "position": "internal",
+    "tags": ["jammer", "contactjammer", "ew"]
+  },
+  "activation": "active",
+  "cycle": 1,
+  "reload": 0,
+  "interference": 0,
+
+  "modificators": {
+    "offline": [],
+    "online": [],
+    "active": [
+      {
+        "target": "this",
+        "characteristic": "constant.heating",
+        "modificationType": "number",
+        "modificator": "0.01 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>heating_modifier']",
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.capacitor.generation",
+        "modificationType": "number",
+        "modificator": "-6 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>capacitor_consumption_modifier']",
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "target",
+        "characteristic": "constant.module_modifiers.sensors>contact>bonus",
+        "modificationType": "number",
+        "modificator": "( -2 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>EW_strenght_modifier'] ) * ( 1 - target.characteristics.constant.resistance.EW )",
+        "isAffectedByInterference": false
+      }
+    ],
+    "overload": []
+  }
+}
