@@ -30,13 +30,6 @@
         "modificationType": "number",
         "modificator": "-6 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>capacitor_consumption_modifier']",
         "isAffectedByInterference": false
-      },
-      {
-        "target": "target",
-        "characteristic": "constant.contact_quality",
-        "modificationType": "number",
-        "modificator": "( -2 * parent.currentCharacteristics.constant.module_modifiers['offence>EW>EW_strenght_modifier'] ) * ( 1 - target.characteristics.constant.resistance.EW )",
-        "isAffectedByInterference": false
       }
     ],
     "overload": []
