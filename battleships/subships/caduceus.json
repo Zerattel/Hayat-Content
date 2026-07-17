@@ -17,7 +17,7 @@
       "layers": ["drone"],
 
       "subgrid": {
-        "size": 40,
+        "size": 30,
         "category": "battle",
         "autonomous": false,
         "fuel": 1200,

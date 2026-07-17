@@ -22,6 +22,22 @@
     "tracking": 7
   },
 
+  "effects": [
+    {
+      "class": "LaserAttackModuleEffect",
+      "activateOn": ["active"],
+      "settings": {
+        "beamColor": "#FF0000DD",
+        "beamSize": 10,
+
+        "flashColor": "#FF0000CC",
+        "flashSize": 40,
+
+        "effectivnessImpact": 0.3
+      }
+    }
+  ],
+
   "initFunctions": "<[LaserAttack]>",
 
   "modificators": {

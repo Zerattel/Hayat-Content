@@ -24,6 +24,12 @@
         "self_destruct_in": 120,
         "guidanceDelay": 3,
 
+        "guidance": {
+          "response_time": 0.2,
+          "rotation": 60,
+          "side_scale": 0.2
+        },
+
         "poximity_fuse": {
           "passive": null,
           "active": {

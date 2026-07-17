@@ -23,6 +23,23 @@
     "tracking": 3
   },
 
+  "effects": [
+    {
+      "class": "BallisticAttackModuleEffect",
+      "activateOn": ["active"],
+      "settings": {
+        "ammoSize": [20, 40],
+        "tracerColor": "#fa0202",
+        "ammoSpeed": 3000,
+        "spread": 0.3,
+        "maxFlyTime": 1,
+
+        "burst": 5,
+        "ammoFrequency": 0.05
+      }
+    }
+  ],
+
   "initFunctions": "<[BallisticAttack]>",
 
   "modificators": {
