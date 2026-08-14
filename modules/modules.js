@@ -50,7 +50,10 @@ const calculateRelativeData = (obj1, obj2) => {
 
 function calculateHitChance(parent, target, module, currentContactBonus) {
     // 1. ВСТРЕЧНЫЙ БРОСОК: Контакт vs Уклонение
-    const targetManeuverability = getFullManeuverability(target.currentCharacteristics, target.dices.maneuvering);
+    const targetManeuverability = getFullManeuverability(
+        target.currentCharacteristics, 
+        (target.dices?.maneuvering ?? 0) + (target.currentCharacteristics?.constant?.dice_modifiers?.maneuvering ?? 0)
+      );
     const delta = currentContactBonus - targetManeuverability;
     const baseContactChance = 1 / (1 + Math.exp(-delta / 5));
 
@@ -133,8 +136,7 @@ LaserAttack: (modificator, module, parent, target) => {
     if (!target || !parent) return 0;
 
     // Считаем бонус контакта (Дайс + Модификаторы)
-    const baseContact = parent.dices.contactQuality || 10;
-    const dynamicContactMod = parent.currentCharacteristics.constant.module_modifiers['sensors>contact>bonus'] || 0;
+    const baseContact = (parent.dices.contactQuality ?? 10) + (parent.currentCharacteristics.constant?.dice_modifiers?.contactQuality ?? 0);    const dynamicContactMod = parent.currentCharacteristics.constant.module_modifiers['sensors>contact>bonus'] || 0;
     const currentContactBonus = baseContact + dynamicContactMod;
 
     // Вызываем новое ядро наведения
@@ -197,8 +199,7 @@ LaserAttack: (modificator, module, parent, target) => {
     const actualPenalty = penalty > 0 ? penalty : 0;
 
     // Считаем бонус контакта (Дайс + Модификаторы - Штраф дальности)
-    const baseContact = parent.dices.contactQuality || 10;
-    const dynamicContactMod = parent.currentCharacteristics.constant.module_modifiers?.['sensors>contact>bonus'] || 0;
+    const baseContact = (parent.dices.contactQuality ?? 10) + (parent.currentCharacteristics.constant?.dice_modifiers?.contactQuality ?? 0);    const dynamicContactMod = parent.currentCharacteristics.constant.module_modifiers?.['sensors>contact>bonus'] || 0;
     const currentContactBonus = baseContact + dynamicContactMod - actualPenalty;
 
     // Вызываем новое ядро наведения
