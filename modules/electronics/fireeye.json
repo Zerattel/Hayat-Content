@@ -6,7 +6,7 @@
 
     "size": 2,
     "position": "internal",
-    "tags": ["weaponbuff,rocketbuff"]
+    "tags": ["weaponbuff", "rocketbuff"]
   },
   "activation": "passive",
   "interference": -0.09,
@@ -14,6 +14,20 @@
   "modificators": {
     "offline": [],
     "online": [
+      {
+        "target": "this",
+        "characteristic": "constant.capacitor.generation",
+        "modificationType": "number",
+        "modificator": -7,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.heating",
+        "modificationType": "number",
+        "modificator": 0.03,
+        "isAffectedByInterference": false
+      },
       {
         "target": "subgrid",
         "affectedLayers": ["missile"],
