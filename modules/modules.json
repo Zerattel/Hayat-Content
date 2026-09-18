@@ -56,5 +56,6 @@
 "Вундерваффе M": "weapons/wwfc-m.json", 
 "Вундерваффе L": "weapons/wwfb-l.json",
 "Система радиоподавления «Лжец»": "EW/lyer.json",
+"Комплекс «FireEye»": "electronics/fireeye.json",
 "Ангар Дрона «Кадуцей»": "hangars/caduceus-hangar.json"
 }

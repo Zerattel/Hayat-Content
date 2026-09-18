@@ -1,0 +1,45 @@
+{
+  "main": {
+    "name": "Комплекс «FireEye»",
+    "type": "Электроника",
+    "category": "Система управления огнём",
+
+    "size": 2,
+    "position": "internal",
+    "tags": ["weaponbuff,rocketbuff"]
+  },
+  "activation": "passive",
+  "interference": -0.09,
+
+  "modificators": {
+    "offline": [],
+    "online": [
+      {
+        "target": "subgrid",
+        "affectedLayers": ["missile"],
+        "characteristic": "constant.body.subgrid.explosion.effect.damage.high_explosive",
+        "modificationType": "percent",
+        "modificator": 1.1,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "subgrid",
+        "affectedLayers": ["missile"],
+        "characteristic": "constant.body.subgrid.fuel",
+        "modificationType": "percent",
+        "modificator": 1.3,
+        "isAffectedByInterference": false
+      },
+      {
+        "target": "subgrid",
+        "affectedLayers": ["missile"],
+        "characteristic": "constant.body.subgrid.acceleration",
+        "modificationType": "percent",
+        "modificator": 1.15,
+        "isAffectedByInterference": false
+      }
+    ],
+    "active": [],
+    "overload": []
+  }
+}
