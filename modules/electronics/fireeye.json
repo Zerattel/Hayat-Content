@@ -34,7 +34,7 @@
         "characteristic": "constant.body.subgrid.explosion.effect.damage.high_explosive",
         "modificationType": "percent",
         "modificator": 1.1,
-        "isAffectedByInterference": false
+        "isAffectedByInterference": true
       },
       {
         "target": "subgrid",
@@ -42,7 +42,7 @@
         "characteristic": "constant.body.subgrid.fuel",
         "modificationType": "percent",
         "modificator": 1.3,
-        "isAffectedByInterference": false
+        "isAffectedByInterference": true
       },
       {
         "target": "subgrid",
@@ -50,7 +50,7 @@
         "characteristic": "constant.body.subgrid.acceleration",
         "modificationType": "percent",
         "modificator": 1.15,
-        "isAffectedByInterference": false
+        "isAffectedByInterference": true
       }
     ],
     "active": [],
