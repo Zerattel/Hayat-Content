@@ -1,0 +1,36 @@
+{
+  "main": {
+    "name": "Проф. Особенность типа «Грифон»",
+    "type": "Проф. Особенность типа",
+    "category": "Проф. Особенность Фрегата",
+
+    "size": 0,
+    "position": "internal",
+    "tags": ["stp"]
+  },
+  "activation": "passive",
+  "interference": 0,
+
+  "modificators": {
+    "offline": [],
+    "online": [
+        {
+        "target": "subgrid",
+        "affectedLayers": ["missile"],
+        "characteristic": "constant.body.subgrid.explosion.effect.damage.high_explosive",
+        "modificationType": "percent",
+        "modificator": 1.25,
+        "isAffectedByInterference": true
+      },
+      {
+        "target": "this",
+        "characteristic": "constant.module_modifiers.engineering>mobility>micro_distortion_drive>signature_penalty_modifier",
+        "modificationType": "percent",
+        "modificator": 0.5,
+        "isAffectedByInterference": false
+      }
+    ],
+    "active": [],
+    "overload": []
+  }
+}

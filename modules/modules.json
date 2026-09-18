@@ -36,6 +36,7 @@
 "Артиллерия «Крокодил» L": "weapons/croc.json",
 "Пионер ПО": "shiptype-profile/kr-pioner-stp.json",
 "Богомол ПО": "shiptype-profile/gc-mantis-stp.json",
+"Грифон ПО": "shiptype-profile/nc-gryphon-stp.json",
 "Люркер MkII ПО": "shiptype-profile/sss-lurker-mkII-stp.json",
 "Мотылёк ПО": "shiptype-profile/zd-moth-stp.json",
 "Неостальная броня": "regeneration/neosteel-coating.json",
