@@ -1,10 +1,12 @@
-const { default: BaseModule } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/canvas/objects/map/module/baseModule.js");
-const { default: ShipObject } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/canvas/objects/map/ship/shipObject.js");
-const { log } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/controls/step-logs/log.js");
-const { updateLoading } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/js/loading.js");
-const { clamp } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/clamp.js");
-const { getFullManeuverability, tonnageToResolution } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/hayat/battleships.js");
-const { point } = await import("https://makar-ts.github.io/HayatBattleshipCalculator/libs/vector/point.js");
+const ENGINE = new URL("./", location.href).href;
+
+const { default: BaseModule } = await import(ENGINE + "js/canvas/objects/map/module/baseModule.js");
+const { default: ShipObject } = await import(ENGINE + "js/canvas/objects/map/ship/shipObject.js");
+const { log } = await import(ENGINE + "js/controls/step-logs/log.js");
+const { updateLoading } = await import(ENGINE + "js/loading.js");
+const { clamp } = await import(ENGINE + "libs/clamp.js");
+const { getFullManeuverability, tonnageToResolution } = await import(ENGINE + "libs/hayat/battleships.js");
+const { point } = await import(ENGINE + "libs/vector/point.js");
 
 const calculateRelativeData = (obj1, obj2) => {
     const dx = obj2._x - obj1._x;
